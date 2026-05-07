@@ -21,7 +21,7 @@ public:
 	NameException(string text, string name) : MobileException(text), name(name) {
 
 	}
-	virtual string showMessage()const override {
+	 string showMessage()const override {
 		return "NameException: " + text + " = " + name;
 	}
 };
@@ -33,7 +33,7 @@ public:
 	SecondsException(string text, int seconds) : MobileException(text), seconds(seconds) {
 
 	}
-	virtual string showMessage()const override {
+	string showMessage()const override {
 		return "SecondsException: " + text + " = " + std::to_string(seconds);
 	}
 };
@@ -45,7 +45,7 @@ public:
 	PriceException(string text, float price) : MobileException(text), price(price) {
 
 	}
-	virtual string showMessage()const override {
+	string showMessage()const override {
 		return "PriceException: " + text + " = " + std::to_string(price);
 	}
 };
