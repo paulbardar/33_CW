@@ -8,11 +8,14 @@ Tariff::Tariff()
 
 Tariff::Tariff(std::string name)
 {
-    this->name = name;
+    setName(name);
 }
 
 void Tariff::setName(std::string name)
 {
+
+    if (name == "xxx") throw NameException("Censore Lexic", name);
+    if (name.empty()) throw NameException("Empty string", "Empty");
     this->name = name;
 }
 

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <exception>
+#include "MobileProvider.h"
 
 using std::cout;
 using std::endl;
@@ -80,7 +81,25 @@ int main()
 
     // 3 Task
 
+    MobileProvider Kyiv("Kyivstar");
+    for (int i = 0; i < 3; i++) {
+        string title;
+        float price;
+        cout << "Enter packet name ";
+        cin >> title;
+        cout << " Enter price ";
+        cin >> price;
+        try {
+            Kyiv.addTariff(new SecondsTariff(title, price));
+        }
+        catch (const MobileException& obj) {
+            cout << "Error " << obj.showMessage() << endl;
 
+        }
+    }
+
+    cout << "=============================================" << endl;
+    Kyiv.showList();
 }
 
 
